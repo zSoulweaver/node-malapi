@@ -66,14 +66,11 @@ class Anime {
       detailsLink: $('a:contains("Details")').attr('href'),
       episodesLink: $('a:contains("Episodes")').attr('href'),
 
-      alternativeTitles: {
-        japanese: utils.parseSidebar($, 'Japanese', true),
-        english: utils.parseSidebar($, 'English', true),
-        synoynms: utils.parseSidebar($, 'Synonyms', true),
-      },
+      alternativeTitles: [].concat(utils.parseSidebar($, 'English', true), utils.parseSidebar($, 'Synonyms', true), utils.parseSidebar($, 'Japanese', true)),
 
       type: $('span:contains("Type:")').next('a').text(),
       episodes: utils.parseSidebar($, 'Episodes'),
+      duration: utils.parseSidebar($, 'Duration'),
 
       status: utils.parseSidebar($, 'Status'),
       aired: utils.parseSidebar($, 'Aired'),
