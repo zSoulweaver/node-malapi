@@ -1,6 +1,6 @@
 function parseSidebar($, term, split = false) {
   const el = $(`span:contains("${term}:")`);
-  const re = new RegExp(`${term}:\n`, 'g');
+  const re = new RegExp(`${term}:`, 'g');
 
   if (typeof el !== 'undefined' && el.length > 0) {
     if (split) {
